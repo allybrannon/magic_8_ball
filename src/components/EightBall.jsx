@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 class EightBall extends Component {
   state = {
-    question: "",
     answer: [],
   };
 
@@ -17,10 +16,9 @@ class EightBall extends Component {
     const response = await fetch(
       `https://8ball.delegator.com/magic/JSON/'${question}'`
     );
-    const answerBall = await response.json();
-    console.log(answerBall);
+    const magicBall = await response.json();
     this.setState({
-      userAnswer: answerBall.magic.answer,
+      userAnswer: magicBall.magic.answer,
     });
   }
   render() {
@@ -34,7 +32,7 @@ class EightBall extends Component {
             <input
               type="text"
               value={this.state.textInput}
-              placeholder="user name"
+              placeholder="ask a question"
               onChange={this.handleChange}
             />
           </label>
