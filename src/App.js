@@ -15,11 +15,11 @@ class App extends Component {
     const answerBall = await response.json();
     console.log(answerBall);
     this.setState({
-      answer: answerBall.magic.answer,
+      userAnswer: answerBall.magic.answer,
     });
   }
   render() {
-    const { answer } = this.state;
+    const { userAnswer } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -34,7 +34,7 @@ class App extends Component {
             />
           </label>
           <button type="submit">Submit</button>
-          <p>Answer: {answer}</p>
+          <p>Answer: {userAnswer}</p>
         </form>
       </div>
     );
