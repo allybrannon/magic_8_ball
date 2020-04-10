@@ -6,6 +6,12 @@ class EightBall extends Component {
     answer: [],
   };
 
+  handleChange = (event) => {
+    this.setState({
+      question: event.target.value,
+    });
+  };
+
   async componentDidMount() {
     const { question } = this.state;
     const response = await fetch(
